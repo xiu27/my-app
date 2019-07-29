@@ -10,7 +10,7 @@ pipeline {
         }
         stage('loli') {
           steps {
-            bat 'jar -version'
+            bat 'java -version'
           }
         }
       }
