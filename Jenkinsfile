@@ -1,21 +1,29 @@
-    
 pipeline {
-    agent any
-    stages {
+  agent any
+  stages {
+    stage('---clean---') {
+      parallel {
         stage('---clean---') {
-            steps {
-                bat "mvn clean"
-            }
+          steps {
+            bat 'mvn clean'
+          }
         }
-        stage('--test--') {
-            steps {
-                bat "mvn test"
-            }
+        stage('loli') {
+          steps {
+            bat 'jar -version'
+          }
         }
-        stage('--package--') {
-            steps {
-                bat "mvn package"
-            }
-        }
+      }
     }
+    stage('--test--') {
+      steps {
+        bat 'mvn test'
+      }
+    }
+    stage('--package--') {
+      steps {
+        bat 'mvn package'
+      }
+    }
+  }
 }
