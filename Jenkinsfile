@@ -10,7 +10,7 @@ pipeline {
         }
         stage('loli') {
           steps {
-            bat 'java -version'
+            bat 'echo \'hello\''
           }
         }
       }
